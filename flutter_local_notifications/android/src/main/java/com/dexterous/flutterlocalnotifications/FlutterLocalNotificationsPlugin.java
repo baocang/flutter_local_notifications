@@ -481,11 +481,12 @@ public class FlutterLocalNotificationsPlugin implements MethodCallHandler, Plugi
     }
 
     private static Class getMainActivityClass(Context context) {
-        String packageName = context.getPackageName();
-        Intent launchIntent = context.getPackageManager().getLaunchIntentForPackage(packageName);
-        String className = launchIntent.getComponent().getClassName();
+//        String packageName = context.getPackageName();
+//        Intent launchIntent = context.getPackageManager().getLaunchIntentForPackage(packageName);
+//        String className = launchIntent.getComponent().getClassName();
         try {
-            return Class.forName(className);
+            return Class.forName("com.russellme.ryzn.MainActivity");
+//            return Class.forName(className);
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
             return null;
